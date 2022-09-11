@@ -1,0 +1,18 @@
+[placeholders.description]
+type = "string"
+prompt = "Description for the project?"
+default = ""
+
+[placeholders.github_user]
+type = "string"
+prompt = "GitHub user or organization?"
+default = "digitalsanctum"
+
+[placeholders.rust_edition]
+type = "string"
+prompt = "Rust edition?"
+default = "2021"
+choices = ["2015", "2018", "2021"]
+
+[template]
+cargo_generate_version = ">=0.16.0"
