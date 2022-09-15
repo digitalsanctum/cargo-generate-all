@@ -3,10 +3,10 @@ FROM rust:1-alpine3.16
 # This is important, see https://github.com/rust-lang/docker-rust/issues/85
 ENV RUSTFLAGS="-C target-feature=-crt-static"
 # if needed, add additional dependencies here
-RUN apk add --no-cache musl-dev
+RUN apk add --no-cache musl-dev pkgconfig libressl-dev
 # set the workdir and copy the source into it
 WORKDIR /app
-COPY ../.. /app
+COPY ./ /app
 # do a release build
 RUN cargo build --release
 RUN strip target/release/{{project-name}}-api
@@ -17,7 +17,5 @@ FROM alpine:3.16
 RUN apk add --no-cache libgcc
 # copy the binary into the final image
 COPY --from=0 /app/target/release/{{project-name}}-api .
-# expose port
-EXPOSE 8080
 # set the binary as entrypoint
 ENTRYPOINT ["/{{project-name}}-api"]

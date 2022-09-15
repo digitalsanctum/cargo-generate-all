@@ -1,9 +1,9 @@
 Dockerfile
 .dockerignore
 .git
+.github
 .gitignore
 .idea
 target
-**/*.rs.bk
-*.swp
-*.swo
+*.md
+LICENSE
