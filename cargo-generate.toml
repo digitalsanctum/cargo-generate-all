@@ -6,7 +6,7 @@ default = ""
 [placeholders.github_user]
 type = "string"
 prompt = "GitHub user or organization?"
-default = "digitalsanctum"
+default = "thesurlydev"
 
 [placeholders.rust_edition]
 type = "string"
